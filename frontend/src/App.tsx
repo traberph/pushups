@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { Routes } from 'react-router'
 import './App.css'
+import { Route } from 'react-router'
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
+
   )
 }
 
