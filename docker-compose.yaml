@@ -1,0 +1,40 @@
+version: '3.8'
+
+name: pushups
+services:
+  # database:
+  #   build:
+  #     context: ./database
+  #     dockerfile: Dockerfile
+  #   env_file: ./database/.env
+  #   ports:
+  #     - "5433:5432"
+  #   volumes:
+  #     - ./database/data:/var/lib/postgresql/data # this loads the data, but no preprocessing, todo later
+  #     - ./database:/app
+  
+  
+  # backend:
+  #   build:
+  #     context: ./backend
+  #   depends_on:
+  #     - database
+  #     #   condition: service_healthy
+  #   env_file: ./backend/.env
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ./backend:/app
+
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
