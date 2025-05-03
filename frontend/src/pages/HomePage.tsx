@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
 import { authService } from "../services/authService";
 
 const HomePage = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [userName, setUserName] = useState<string | null>("Guest");
-  const location = useLocation();
 
   useEffect(() => {
     const checkAuth = async () => {
