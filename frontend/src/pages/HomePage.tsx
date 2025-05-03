@@ -1,6 +1,35 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import { authService } from "../services/authService";
 
 const HomePage = () => {
-  const userName = "joni";
+
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [userName, setUserName] = useState<string | null>("Guest");
+  const location = useLocation();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const authenticated = await authService.isAuthenticated();
+      setIsAuthenticated(authenticated);
+      console.log("Authenticated:", authenticated);
+
+      const user = await authService.getUser();
+      if (user) {
+        setUserName(user.profile.name || "Guest");
+        console.log("User:", user.profile.name);
+      }
+
+      if (!authenticated) {
+        console.log("Redirecting to login...");
+        // authService.login();
+      } else {
+        console.log("User is authenticated");
+      }
+    };
+    checkAuth();
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-black-100">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">

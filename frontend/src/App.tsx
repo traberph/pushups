@@ -3,15 +3,14 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import { Login } from './pages/Login';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import CallbackPage from './pages/Callback';
-import LoginPage from './pages/LoginPage';
+// import CallbackPage from './pages/Callback';
+import { Callback } from './pages/Callback';
 
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/login2" element={<Login />} />
-      <Route path="/callback" element={<CallbackPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/callback" element={<Callback />} />
       <Route
         path="/"
         element={
@@ -20,6 +19,8 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="dev" element={<HomePage />} />
+      
     </Routes>
   );
 }

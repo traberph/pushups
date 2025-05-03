@@ -18,11 +18,6 @@ export default defineConfig({
   proxy: {
     "/api": "http://localhost:8000",
     // "/api": "http://backend:8000",
-    '/auth-proxy': {
-      target: 'https://auth.traberph.de',
-      changeOrigin: true,
-      rewrite: (path) => path.replace(/^\/auth-proxy/, ''),
-    },
   }
  },
 });
