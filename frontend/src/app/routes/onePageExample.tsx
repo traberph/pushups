@@ -21,7 +21,7 @@ const oidcConfig: AuthProviderProps = {
     },
     // onSigninCallback: onSigninCallback,
 };
-function App() {
+function ExampleApp() {
     const auth = useAuth();
 
     if (auth.isLoading) {
@@ -99,13 +99,13 @@ function Page({ children }: PageProps) {
     );
 }
 
-function Example() {
+function OnePageExample() {
     return (
         <AuthProvider {...oidcConfig}>
             <Page>
-                <App />
+                <ExampleApp />
             </Page>
         </AuthProvider>
     )
 }
-export default Example;
+export default OnePageExample;

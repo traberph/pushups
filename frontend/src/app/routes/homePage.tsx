@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { authService } from "../services/authService";
+import { authService } from "../../services/authService";
 
 const HomePage = () => {
 
@@ -34,6 +34,10 @@ const HomePage = () => {
         <h1 className="text-3xl font-bold">
           {`Welcome ${userName}`}
         </h1>
+        <h3 className="text-xl text-gray-600">
+        {isAuthenticated ? "Authenticated" : "Not Authenticated"}
+
+        </h3>
         <p className="mt-4 text-gray-600">
           This is the home page of your application.
         </p>

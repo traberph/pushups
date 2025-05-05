@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router';
-import { authService } from '../services/authService';
+import { authService } from '../../services/authService';
 
 export const Login: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +11,7 @@ export const Login: React.FC = () => {
     const checkAuth = async () => {
       const isAuthenticated = await authService.isAuthenticated();
       if (isAuthenticated) {
-        const from = (location.state as any)?.from?.pathname || '/';
+        const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/';
         navigate(from, { replace: true });
       }
     };

@@ -2,9 +2,55 @@
 
 To build and run the frontend container, you can use these commands:
 
-```bash
-sudo 
-```
+**File Naming**
+
+kebab-case
+for example `my-component.tsx`
+
+**Component Naming**
+
+PascalCase
+for example `MyComponent`
+
+**Function and Variable Naming**
+
+camelCase
+for example `fetchUserData`
+
+**Constants and Enum Naming**
+
+UPPER_SNAKE_CASE
+for example `MAX_PUSHUPS`
+kebab-case also prevents naming conflicts on case-insensitive file systems, ensuring your codebase remains consistent across different environments.
+
+Component Naming
+
+When naming components in a React project, it’s important to use PascalCase. This convention capitalizes the first letter of each word, making component names easy to distinguish from regular HTML elements.
+
+For example, a component that displays a user profile might be named UserProfile.
+
+Function and Variable Naming
+
+camelCase is the preferred convention for naming functions and variables in a React project. This convention uses lowercase letters for the first word and capitalizes subsequent words, making names easy to read and understand.
+Also Object Properties and Custom Hooks should be named in camelCase.
+
+For example, a function that fetches user data might be named fetchUserData. This convention is widely used in JavaScript and React and helps maintain consistency across your codebase.
+
+# Welcome XY
+
+**Last pushups received**
+time | prompted by
+[loading bar for cooldown]
+
+**Last pushups sent**
+time | prompted by
+
+btn prompt a user
+[loading spinner for cooldown]
+
+btn add Friends
+
+
 
 # React + TypeScript + Vite
 
