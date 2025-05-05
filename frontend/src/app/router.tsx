@@ -5,6 +5,7 @@ import { ProtectedRoute } from '../components/ProtectedRoute'
 import { Login } from './routes/login'
 import HomePage from './routes/homePage'
 import { Callback } from './routes/callback'
+import { PushupPage } from '../features/pushup/pushupPage'
 
 
 
@@ -24,7 +25,7 @@ const AppRouter = () => {
         }
       />
       {/* for development purposes we enable the route to the home page without authentication */}
-      <Route path="dev" element={<HomePage />} />
+      <Route path="dev" element={<PushupPage />} />
     </Routes>
   </BrowserRouter>  )
 }
